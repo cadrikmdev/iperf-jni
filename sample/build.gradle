@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    compileSdkVersion compile_sdk_version
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.synaptictools.iperfsample"
