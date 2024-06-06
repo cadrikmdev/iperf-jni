@@ -55,6 +55,7 @@ android {
             ignoreExitValue true
         }
     }
+    namespace 'com.synaptictools.iperf'
 }
 
 dependencies {
