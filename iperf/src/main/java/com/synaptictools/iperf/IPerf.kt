@@ -44,8 +44,9 @@ object IPerf: iPerfNative() {
                 config.interval,
                 config.download,
                 config.useUDP,
-                config.json
-            )
+                config.json,
+                config.maxBandwidthBitPerSecond,
+                )
             val ret = execute()
             if (ret == 0) {
                 callbacks?.onSuccess?.invoke()

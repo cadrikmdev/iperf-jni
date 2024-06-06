@@ -88,7 +88,7 @@ void iPerfNative::deInit() {
 }
 
 void iPerfNative::init(char *hostname, int port, char *streamTemplate, int duration,
-                       int interval, bool download, bool useUDP, bool json) {
+                       int interval, bool download, bool useUDP, bool json, long maxBandwidthBitPerSecond) {
     this->hostname = hostname;
     this->port = port;
     this->streamTemplate = streamTemplate;
@@ -97,6 +97,7 @@ void iPerfNative::init(char *hostname, int port, char *streamTemplate, int durat
     this->download = download;
     this->useUDP = useUDP;
     this->json = json;
+    this->maxBandwidthBitPerSecond = maxBandwidthBitPerSecond;
 
     this->test = iperf_new_test();
 
@@ -123,6 +124,7 @@ void iPerfNative::init(char *hostname, int port, char *streamTemplate, int durat
 
     iperf_set_test_template(this->test, (char *) this->streamTemplate.c_str());
     iperf_set_test_num_streams(this->test, 1);
+    iperf_set_test_rate(this->test, this->maxBandwidthBitPerSecond);
 
     if(!useUDP) {
         set_protocol(this->test, Ptcp);
@@ -223,6 +225,15 @@ bool iPerfNative::isUseUDP() const {
 
 void iPerfNative::setUseUDP(bool udp) {
     iPerfNative::useUDP = udp;
+}
+
+
+long iPerfNative::getMaxBandwidthBitPerSecond() const {
+    return maxBandwidthBitPerSecond;
+}
+
+void iPerfNative::setMaxBandwidthBitPerSecond(long maxBandwidthBitPerSecond) {
+    iPerfNative::maxBandwidthBitPerSecond = maxBandwidthBitPerSecond;
 }
 
 iPerfNativeCallbacks::~iPerfNativeCallbacks() = default;

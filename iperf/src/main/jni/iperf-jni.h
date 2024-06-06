@@ -57,7 +57,7 @@ public:
     void deInit();
 
     void init(char *hostname, int port, char *streamTemplate, int duration,
-              int interval, bool download, bool useUDP, bool json);
+              int interval, bool download, bool useUDP, bool json, long maxBandwidthBitPerSecond);
 
     int execute();
 
@@ -97,6 +97,10 @@ public:
 
     void setUseUDP(bool udp);
 
+    long getMaxBandwidthBitPerSecond() const;
+
+    void setMaxBandwidthBitPerSecond(long maxBandwidthBitPerSecond);
+
 private:
     struct iperf_test *test = nullptr;
     std::string hostname = "";
@@ -107,6 +111,7 @@ private:
     bool download = false;
     bool json = false;
     bool useUDP = false;
+    long maxBandwidthBitPerSecond = 0;
 
     bool debug = false;
 };
