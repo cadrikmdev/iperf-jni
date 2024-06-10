@@ -85,8 +85,8 @@ task generate_iperf_version_string_h() {
     // write them to iperf_version.txt
     //
 
-    def configure_ac_path   =   'iperf/src/main/jni/iperf3/configure.ac'
-    def version_string_h_path = 'iperf/src/main/jni/iperf3/src/version.h'
+    def configure_ac_path   =   layout.projectDirectory.asFile.toString() + '/src/main/jni/iperf3/configure.ac'
+    def version_string_h_path = layout.projectDirectory.asFile.toString() + '/src/main/jni/iperf3/src/version.h'
 
     doLast {
         def lines
