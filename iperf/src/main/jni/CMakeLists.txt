@@ -48,7 +48,7 @@ add_library( # build libiperf.so
         )
 
 add_library(
-        iperf-jni SHARED
+        iperfneo-jni SHARED
 
         iperf-jni-wrap.cpp iperf-jni.cpp
 )
@@ -70,7 +70,7 @@ find_library( # Sets the name of the path variable.
 # can link multiple libraries, such as libraries you define in the
 # build script, prebuilt third-party libraries, or system libraries.
 
-target_link_libraries(iperf-jni
+target_link_libraries(iperfneo-jni
         iperf
 
         # Links the target library to the log library

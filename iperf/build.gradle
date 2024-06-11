@@ -51,11 +51,11 @@ android {
     task swigBuild {
         exec {
             workingDir '.'
-            commandLine 'sh', '-c', 'swig -c++ -java -package com.synaptictools.iperf -outdir src/main/java/com/synaptictools/iperf -o src/main/jni/iperf-jni-wrap.cpp src/main/jni/iperf-jni.i'
+            commandLine 'sh', '-c', 'swig -c++ -java -package com.cadrikmdev.iperf -outdir src/main/java/com/cadrikmdev/iperf -o src/main/jni/iperf-jni-wrap.cpp src/main/jni/iperf-jni.i'
             ignoreExitValue true
         }
     }
-    namespace 'com.synaptictools.iperf'
+    namespace 'com.cadrikmdev.iperf'
 }
 
 dependencies {

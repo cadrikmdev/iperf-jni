@@ -1,4 +1,4 @@
-package com.synaptictools.iperf
+package com.cadrikmdev.iperf
 
 /**
  * Created by KMR on October 17, 2021.

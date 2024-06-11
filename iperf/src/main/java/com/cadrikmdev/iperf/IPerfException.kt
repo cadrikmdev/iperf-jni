@@ -1,4 +1,4 @@
-package com.synaptictools.iperf
+package com.cadrikmdev.iperf
 
 import java.lang.Exception
 

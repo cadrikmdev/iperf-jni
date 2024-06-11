@@ -65,7 +65,7 @@ namespace std {
 %pragma(java) jniclasscode=%{
   static {
       try {
-          System.loadLibrary("iperf-jni");
+          System.loadLibrary("iperfneo-jni");
       } catch (UnsatisfiedLinkError e) {
           System.err.println("Failed to load native library 'traceroutelib'\n" + e);
       }
