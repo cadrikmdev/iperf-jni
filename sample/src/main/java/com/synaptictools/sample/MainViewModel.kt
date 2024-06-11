@@ -4,9 +4,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.synaptictools.iperf.IPerf
-import com.synaptictools.iperf.IPerfConfig
-import com.synaptictools.iperf.IPerfResult
+import com.cadrikmdev.iperf.IPerf
+import com.cadrikmdev.iperf.IPerfConfig
+import com.cadrikmdev.iperf.IPerfResult
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext

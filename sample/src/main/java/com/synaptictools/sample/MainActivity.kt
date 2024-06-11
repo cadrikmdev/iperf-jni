@@ -2,11 +2,9 @@ package com.synaptictools.sample
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
-import com.synaptictools.iperf.IPerfConfig
+import com.cadrikmdev.iperf.IPerfConfig
 import com.synaptictools.sample.databinding.ActivityMainBinding
 import java.io.File
 
@@ -40,7 +38,8 @@ class MainActivity : AppCompatActivity() {
                             download = true,
                             useUDP = false,
                             json = false,
-                            debug = false
+                            debug = false,
+                            maxBandwidthBitPerSecond = 20000000
                         ),
                         isAsync = true
                     )
