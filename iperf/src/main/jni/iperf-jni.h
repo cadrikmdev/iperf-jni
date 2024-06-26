@@ -56,6 +56,8 @@ public:
 
     void deInit();
 
+    void stopTest();
+
     void init(char *hostname, int port, char *streamTemplate, int duration,
               int interval, bool download, bool useUDP, bool json, long maxBandwidthBitPerSecond);
 

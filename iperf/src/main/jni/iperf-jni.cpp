@@ -87,6 +87,12 @@ void iPerfNative::deInit() {
     }
 }
 
+void iPerfNative::stopTest() {
+    if (this->test != nullptr) {
+        iperf_set_test_stop(this->test);
+    }
+}
+
 void iPerfNative::init(char *hostname, int port, char *streamTemplate, int duration,
                        int interval, bool download, bool useUDP, bool json, long maxBandwidthBitPerSecond) {
     this->hostname = hostname;
