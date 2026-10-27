@@ -10,7 +10,6 @@ android {
 
     defaultConfig {
         minSdkVersion min_sdk_version
-        targetSdkVersion compile_sdk_version
 
         version = "1.0.0"
 
@@ -49,13 +48,21 @@ android {
     }
 
     task swigBuild {
-        exec {
-            workingDir '.'
-            commandLine 'sh', '-c', 'swig -c++ -java -package com.cadrikmdev.iperf -outdir src/main/java/com/cadrikmdev/iperf -o src/main/jni/iperf-jni-wrap.cpp src/main/jni/iperf-jni.i'
-            ignoreExitValue true
+        doLast {
+            project.exec {
+                workingDir '.'
+                commandLine 'sh', '-c', 'swig -c++ -java -package com.cadrikmdev.iperf -outdir src/main/java/com/cadrikmdev/iperf -o src/main/jni/iperf-jni-wrap.cpp src/main/jni/iperf-jni.i'
+                ignoreExitValue true
+            }
         }
     }
     namespace 'com.cadrikmdev.iperf'
+    lint {
+        targetSdk 34
+    }
+    testOptions {
+        targetSdk 34
+    }
 }
 
 dependencies {
