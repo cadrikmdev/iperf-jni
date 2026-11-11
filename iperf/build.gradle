@@ -1,7 +1,5 @@
 plugins {
     id 'com.android.library'
-    id 'kotlin-android'
-    id 'kotlin-kapt'
     id 'org.jetbrains.dokka'
 }
 
@@ -19,8 +17,8 @@ android {
         externalNativeBuild {
             cmake {
                 cFlags "-I./src/ -DHAVE_CONFIG_H -UHAVE_STDINT_H -UAF_INET6 -w -Wno-error=format-security -fPIE -pie"
-                cppFlags "-I./src/ -std=c++14 -fexceptions -frtti -DANDROID_STL=c++_shared"
-                arguments "-DANDROID_STL=c++_shared"
+                cppFlags "-I./src/ -std=c++14 -fexceptions -frtti -DANDROID_STL=c++_static"
+                arguments "-DANDROID_STL=c++_static"
             }
         }
     }
@@ -33,12 +31,8 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-
-    kotlinOptions {
-        jvmTarget = '1.8'
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
 
     externalNativeBuild {
@@ -69,7 +63,6 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation libraries
     implementation arch_libraries
-    kapt librariesKapt
     testImplementation testLibraries
     androidTestImplementation androidTestLibraries
 }

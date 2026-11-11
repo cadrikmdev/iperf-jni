@@ -76,3 +76,9 @@ target_link_libraries(iperfneo-jni
         # Links the target library to the log library
         # included in the NDK.
         ${log-lib})
+
+# Ensure 16 KB page size alignment for Android 15+ compatibility
+target_link_options(iperf-jni PRIVATE
+        "-Wl,-z,max-page-size=16384"
+        "-Wl,-z,common-page-size=16384"
+)
