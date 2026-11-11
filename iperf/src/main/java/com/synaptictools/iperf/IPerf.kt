@@ -1,5 +1,6 @@
 package com.synaptictools.iperf
 
+import com.cadrikmdev.iperf.iPerfNative
 import java.lang.Exception
 
 /**
